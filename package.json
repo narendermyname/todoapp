@@ -1,0 +1,35 @@
+{
+	"name": "todoapp",
+	"version": "1.0.0",
+	"description": "TODO Application",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Test\""
+	},
+	"keywords": [
+		"TODO"
+	],
+	"author": "Narender Singh Tanwar",
+	"license": "ISC",
+	"private": true,
+	"scripts": {
+		"watch": "webpack --watch -d",
+		"prebuild": "npm install",
+		"build": "webpack -d"
+	},
+	"dependencies": {
+		"css-loader": "^0.28.7",
+		"file-loader": "^1.1.5",
+		"font-loader": "^0.1.2",
+		"html-loader": "^0.5.1",
+		"jshint": "^2.9.5",
+		"jshint-loader": "^0.8.4",
+		"json-loader": "^0.5.7",
+		"less-loader": "^4.0.5",
+		"style-loader": "^0.19.0",
+		"svg-loader": "0.0.2",
+		"transform-loader": "^0.2.4",
+		"url-loader": "^0.6.2",
+		"webpack": "^3.6.0"
+	}
+}

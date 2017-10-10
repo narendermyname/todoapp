@@ -1,0 +1,45 @@
+<div class="container" data-ng-controller="ToDoController">
+	<div id="myDIV" class="header">
+		<h2 style="margin: 5px">TODO</h2>
+		<input data-ng-model="title" data-ng-keypress="add($event)"
+			type="text" id="title" />
+	</div>
+	<div id="myDIV" class="header">
+		<span class="todoBtn" data-ng-click="completeAll()">Complete
+			All </span><span style="float: right;" class="todoBtn"
+			data-ng-click="deleteAll()">Delete All</span> TODOs : <span
+			class="badge">{{todos.length}}</span>
+	</div>
+	<div class="well">
+		<div class="form-group">
+			<label for="selected">Filter By</label> <select id="selected"
+				data-ng-model="selected" class="form-control"
+				style="width: 90%; display: inline;" data-ng-change="filter()">
+				<option data-ng-repeat="x in todoTask" value="{{x == 'Completed' }}">{{x}}</option>
+			</select>
+			<button type="button" class="btn btn-success"
+				data-ng-click="loadAllTodo()" title="Clear Filter">&#x2717</button>
+		</div>
+		<div class="form-group">
+			<input class="form-control" type="search" data-ng-model="search"
+				placeholder="Search TODO" />
+		</div>
+	</div>
+	<hr></hr>
+	<ul id="todoList" data-ng-show="todos.length > 0"
+		data-ng-repeat="t in todos | filter : search">
+		<div class="well {{t.completed ? 'checked' : ''}}"
+			data-ng-dblclick="edit(t)">
+			<button type="button" class="btn btn-success" data-toggle="tooltip"
+				data-placement="top" title="Complete"
+				data-ng-click="t.completed= true;update(t)"
+				data-ng-disabled="t.completed">&#9989</button>
+			<span data-ng-hide="t.editing"> {{t.title}}</span> <input
+				style="width: 90%; margin-left: 10px;" data-ng-show="t.editing"
+				data-ng-model="t.title"
+				data-ng-blur="t.completed= false;doneEditing(t);update(t)" autofocus />
+			<button type="button" class="btn btn-danger pull-right"
+				data-ng-click="remove(t)" title="Remove">&#x2717</button>
+		</div>
+	</ul>
+</div>
