@@ -8,6 +8,8 @@ target/
 .project
 .settings
 .springBeans
+node_modules/
+npm-debug.log
 
 ### IntelliJ IDEA ###
 .idea

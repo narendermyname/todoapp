@@ -4,7 +4,7 @@
 
 module.exports = {
    context: __dirname + '/app',
-   entry: './main.js',
+   entry: './Todo.js',
    output: {
       path: __dirname + '/src/main/webapp',
       filename: 'bundle.js'

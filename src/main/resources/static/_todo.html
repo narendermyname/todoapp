@@ -1,10 +1,10 @@
 <div class="container" data-ng-controller="ToDoController">
-	<div id="myDIV" class="header">
+	<div id="todo" class="header">
 		<h2 style="margin: 5px">TODO</h2>
 		<input data-ng-model="title" data-ng-keypress="add($event)"
 			type="text" id="title" />
 	</div>
-	<div id="myDIV" class="header">
+	<div id="todo" class="header">
 		<span class="todoBtn" data-ng-click="completeAll()">Complete
 			All </span><span style="float: right;" class="todoBtn"
 			data-ng-click="deleteAll()">Delete All</span> TODOs : <span
